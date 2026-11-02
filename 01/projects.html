@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პროექტები - ზუკა ოქროპირიძე | პორტფოლიო</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- ჰედერი: ტაბების სათითაოდ ჩვენების ნაცვლად არის სუფთა ბურგერ მენიუ, ზომები rem-ებში -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/95 border-b border-slate-800">
+        <div class="max-w-[64rem] mx-auto px-[1rem] sm:px-[1.5rem] lg:px-[2rem]">
+            <div class="h-[4.5rem] sm:h-[5rem] flex items-center justify-between">
+                <div>
+                    <a href="index.html" class="text-[1.25rem] sm:text-[1.5rem] font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        ზუკა ოქროპირიძე
+                    </a>
+                    <p class="text-[0.75rem] text-slate-400 font-medium">Front-End დეველოპერი</p>
+                </div>
+
+                <!-- ბურგერ მენიუს ღილაკი -->
+                <button 
+                    id="menuBtn" 
+                    type="button" 
+                    aria-label="მენიუს გახსნა/დახურვა" 
+                    aria-expanded="false" 
+                    aria-controls="mainMenu"
+                    class="flex items-center gap-[0.5rem] px-[0.875rem] py-[0.5rem] rounded-[0.75rem] bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors shadow-sm cursor-pointer"
+                >
+                    <span class="text-[0.875rem] font-semibold text-slate-300">მენიუ</span>
+                    <svg id="burgerIcon" class="w-[1.25rem] h-[1.25rem] block text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="closeIcon" class="w-[1.25rem] h-[1.25rem] hidden text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- ბურგერ მენიუს ჩამოსაშლელი ნავიგაცია -->
+            <nav id="mainMenu" aria-label="მთავარი ნავიგაცია" class="hidden pb-[1rem] pt-[0.5rem] border-t border-slate-800/80">
+                <ul class="flex flex-col gap-[0.5rem] text-[0.9375rem] font-semibold">
+                    <li>
+                        <a href="index.html" class="flex items-center justify-between px-[1rem] py-[0.75rem] rounded-[0.75rem] text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
+                            <span>მთავარი</span>
+                            <span class="text-[0.75rem] opacity-50">&rarr;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html" class="flex items-center justify-between px-[1rem] py-[0.75rem] rounded-[0.75rem] bg-indigo-600 text-white shadow-md">
+                            <span>პროექტები</span>
+                            <span class="text-[0.75rem] opacity-75">აქტიური</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="flex items-center justify-between px-[1rem] py-[0.75rem] rounded-[0.75rem] text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
+                            <span>კონტაქტი</span>
+                            <span class="text-[0.75rem] opacity-50">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- მთავარი შინაარსი (Main) -->
+    <main class="flex-grow max-w-[64rem] mx-auto px-[1rem] sm:px-[1.5rem] lg:px-[2rem] py-[2rem] sm:py-[3rem] w-full space-y-[2rem] sm:space-y-[3rem]">
+        
+        <!-- Header Banner -->
+        <div class="space-y-[1.25rem]">
+            <div class="flex items-center gap-[0.75rem] border-b border-slate-800 pb-[1rem]">
+                <div class="w-[0.5rem] h-[1.75rem] sm:h-[2rem] bg-indigo-500 rounded-full"></div>
+                <div>
+                    <h1 class="text-[1.5rem] sm:text-[2.25rem] font-extrabold tracking-tight text-white">
+                        ჩემი <span class="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">პროექტები</span>
+                    </h1>
+                    <p class="text-[0.8125rem] sm:text-[0.875rem] text-slate-400 mt-[0.25rem]">შესრულებული სამუშაოებისა და ვებ-აპლიკაციების ჩამონათვალი</p>
+                </div>
+            </div>
+
+            <!-- ზოგადი სურათი / მიმოხილვა -->
+            <figure class="relative overflow-hidden rounded-[1.25rem] sm:rounded-[1.75rem] border border-slate-700/60 shadow-xl bg-slate-800/40 group">
+                <img 
+                    src="https://media.licdn.com/dms/image/v2/C5612AQGwStkQ64nbYA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520210212264?e=2147483647&v=beta&t=v1kgGmGjm5khoqMnxq8jGf8xqI2VvDNHJn3yjLJzz_c" 
+                    alt="პროექტების მენეჯმენტი და სამუშაო პროცესი" 
+                    class="w-full h-[12rem] sm:h-[18rem] md:h-[20rem] object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                >
+                <figcaption class="p-[1rem] sm:p-[1.5rem] bg-slate-950/85 sm:bg-gradient-to-t sm:from-slate-950 sm:via-slate-950/70 sm:to-transparent sm:absolute sm:bottom-0 sm:inset-x-0 text-[0.8125rem] sm:text-[0.875rem] text-slate-300 font-medium">
+                    ჩემი პროექტების მიმოხილვა — დაგეგმვიდან საბოლოო შედეგამდე
+                </figcaption>
+            </figure>
+        </div>
+
+        <!-- პროექტების ბადე -->
+        <section class="space-y-[1.5rem]">
+            <h2 class="text-[1.25rem] sm:text-[1.5rem] font-bold tracking-tight text-white">ნამუშევრების გალერეა</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.5rem] sm:gap-[2rem]">
+                
+                <!-- პროექტი 1 -->
+                <article class="flex flex-col rounded-[1.25rem] sm:rounded-[1.5rem] bg-slate-800/60 border border-slate-700/60 overflow-hidden shadow-xl hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
+                    <figure class="relative h-[11rem] sm:h-[12rem] overflow-hidden bg-slate-900 border-b border-slate-700/60">
+                        <img 
+                            src="https://www.stylefactoryproductions.com/wp-content/uploads/2022/04/how-to-make-an-online-store-copy-1024x576.png" 
+                            alt="ონლაინ მაღაზიის პროექტის გადახედვა" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <figcaption class="sr-only">ონლაინ მაღაზია</figcaption>
+                    </figure>
+
+                    <div class="p-[1.25rem] sm:p-[1.5rem] flex-grow flex flex-col justify-between space-y-[1rem]">
+                        <div class="space-y-[0.75rem]">
+                            <header class="space-y-[0.375rem]">
+                                <span class="text-[0.75rem] font-semibold text-indigo-400 bg-indigo-950/60 px-[0.625rem] py-[0.25rem] rounded-full border border-indigo-800/50 inline-block">
+                                    <time datetime="2025-11">2025 წლის ნოემბერი</time>
+                                </span>
+                                <h3 class="text-[1rem] sm:text-[1.125rem] font-bold text-white group-hover:text-indigo-400 transition-colors pt-[0.25rem]">
+                                    ონლაინ მაღაზია (E-Commerce)
+                                </h3>
+                            </header>
+                            <p class="text-[0.8125rem] sm:text-[0.875rem] text-slate-300 leading-relaxed">
+                                თანამედროვე ელექტრონული კომერციის ვებგვერდის ინტერფეისი სემანტიკური სტანდარტებით, კალათითა და ფილტრაციით.
+                            </p>
+                            <p class="text-[0.75rem] text-slate-400">
+                                <strong class="text-slate-300">ტექნოლოგიები:</strong> Semantic HTML5, CSS3, JS
+                            </p>
+                        </div>
+
+                        <div class="pt-[1rem] border-t border-slate-700/60 flex items-center justify-between text-[0.8125rem] font-semibold">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 transition-colors">
+                                GitHub კოდი &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- პროექტი 2 -->
+                <article class="flex flex-col rounded-[1.25rem] sm:rounded-[1.5rem] bg-slate-800/60 border border-slate-700/60 overflow-hidden shadow-xl hover:border-purple-500/50 transition-all hover:-translate-y-1 group">
+                    <figure class="relative h-[11rem] sm:h-[12rem] overflow-hidden bg-slate-900 border-b border-slate-700/60 flex items-center justify-center">
+                        <img 
+                            src="https://www.shutterstock.com/image-vector/info-icon-information-sign-speech-260nw-1149489332.jpg" 
+                            alt="საინფორმაციო ბლოგის გადახედვა" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <figcaption class="sr-only">საინფორმაციო ბლოგი</figcaption>
+                    </figure>
+
+                    <div class="p-[1.25rem] sm:p-[1.5rem] flex-grow flex flex-col justify-between space-y-[1rem]">
+                        <div class="space-y-[0.75rem]">
+                            <header class="space-y-[0.375rem]">
+                                <span class="text-[0.75rem] font-semibold text-purple-400 bg-purple-950/60 px-[0.625rem] py-[0.25rem] rounded-full border border-purple-800/50 inline-block">
+                                    <time datetime="2025-08">2025 წლის აგვისტო</time>
+                                </span>
+                                <h3 class="text-[1rem] sm:text-[1.125rem] font-bold text-white group-hover:text-purple-400 transition-colors pt-[0.25rem]">
+                                    საინფორმაციო ბლოგი & მედია
+                                </h3>
+                            </header>
+                            <p class="text-[0.8125rem] sm:text-[0.875rem] text-slate-300 leading-relaxed">
+                                მრავალფუნქციური პლატფორმა სტატიების კატეგორიზაციით, კომენტარების სისტემითა და სწრაფი ჩატვირთვით.
+                            </p>
+                            <p class="text-[0.75rem] text-slate-400">
+                                <strong class="text-slate-300">ტექნოლოგიები:</strong> HTML5, Markdown, Web Accessibility
+                            </p>
+                        </div>
+
+                        <div class="pt-[1rem] border-t border-slate-700/60 flex items-center justify-between text-[0.8125rem] font-semibold">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                GitHub კოდი &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- პროექტი 3 -->
+                <article class="flex flex-col rounded-[1.25rem] sm:rounded-[1.5rem] bg-slate-800/60 border border-slate-700/60 overflow-hidden shadow-xl hover:border-pink-500/50 transition-all hover:-translate-y-1 group">
+                    <figure class="relative h-[11rem] sm:h-[12rem] overflow-hidden bg-slate-900 border-b border-slate-700/60">
+                        <img 
+                            src="https://trb.bank/wp-content/uploads/2025/06/Budget-1.jpg" 
+                            alt="ბიუჯეტის აპლიკაციის გადახედვა" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <figcaption class="sr-only">ბიუჯეტის აპლიკაცია</figcaption>
+                    </figure>
+
+                    <div class="p-[1.25rem] sm:p-[1.5rem] flex-grow flex flex-col justify-between space-y-[1rem]">
+                        <div class="space-y-[0.75rem]">
+                            <header class="space-y-[0.375rem]">
+                                <span class="text-[0.75rem] font-semibold text-pink-400 bg-pink-950/60 px-[0.625rem] py-[0.25rem] rounded-full border border-pink-800/50 inline-block">
+                                    <time datetime="2025-03">2025 წლის მარტი</time>
+                                </span>
+                                <h3 class="text-[1rem] sm:text-[1.125rem] font-bold text-white group-hover:text-pink-400 transition-colors pt-[0.25rem]">
+                                    ბიუჯეტის მართვის აპლიკაცია
+                                </h3>
+                            </header>
+                            <p class="text-[0.8125rem] sm:text-[0.875rem] text-slate-300 leading-relaxed">
+                                ინტერაქტიული აპლიკაცია პირადი ფინანსების, შემოსავლებისა და ყოველთვიური ხარჯების აღრიცხვისთვის.
+                            </p>
+                            <p class="text-[0.75rem] text-slate-400">
+                                <strong class="text-slate-300">ტექნოლოგიები:</strong> HTML5 Tables, Forms, CSS Grid
+                            </p>
+                        </div>
+
+                        <div class="pt-[1rem] border-t border-slate-700/60 flex items-center justify-between text-[0.8125rem] font-semibold">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 transition-colors">
+                                GitHub კოდი &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- საიტის ქვედა ნაწილი (Footer) -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-[2rem] text-center text-[0.875rem] text-slate-500 mt-auto">
+        <div class="max-w-[64rem] mx-auto px-[1rem] space-y-[0.5rem]">
+            <p>&copy; 2026 ზუკა ოქროპირიძე. ყველა უფლება დაცულია.</p>
+            <p class="text-[0.75rem] text-slate-600">Mobile-First • rem Units • Semantic HTML5</p>
+        </div>
+    </footer>
+
+    <!-- ბურგერ მენიუს სკრიპტი -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        const burgerIcon = document.getElementById('burgerIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mainMenu.classList.toggle('hidden');
+            burgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
